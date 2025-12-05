@@ -5,5 +5,11 @@ export default defineNuxtConfig({
   modules: ['@nuxt/image', '@nuxt/content', '@nuxt/ui', '@vueuse/nuxt'],
   build: {
     transpile: ['three']
+  },
+  nitro: {
+    // This is critical: tells Nitro "Don't touch this, just let Node run it"
+    externals: {
+      external: ['node-llama-cpp'] 
+    }
   }
 })
