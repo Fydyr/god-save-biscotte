@@ -15,6 +15,7 @@ import HiddenSnakeComponent from '../components/HiddenSnakeComponent.vue';
       
     </div>
   </div>
+  <footerComponent></footerComponent>
 </template>
 <style>
 /* Style global de la page */
