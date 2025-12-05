@@ -1,7 +1,7 @@
 <script setup>
 import { ref } from 'vue';
 import SanteWidget from '../components/SanteWidget.vue';
-import contentComponent from '../components/chatbotComponent.vue';
+import contentComponent from '../components/contentComponent.vue';
 import HiddenSnakeComponent from '../components/HiddenSnakeComponent.vue';
 
 const isPanelOpen = ref(false);
@@ -12,9 +12,12 @@ function togglePanel() {
 </script>
 
 <template>
-  <div>
-    <contentComponent />
+  <div class="page-wrapper">
     <HiddenSnakeComponent />
+
+    <div class="main-content">
+      <contentComponent />
+    </div>
 
     <div class="side-panel" :class="{ 'is-open': isPanelOpen }">
       <button @click="togglePanel" class="panel-toggle">
@@ -22,8 +25,8 @@ function togglePanel() {
         <span v-else>&lt;</span>
       </button>
       <div class="panel-content">
-        <h1>Défi : CTO de Votre Santé Posturale</h1>
-        <SanteWidget />
+          <h1>Défi : CTO de Votre Santé Posturale</h1>
+          <SanteWidget />
       </div>
     </div>
     <FooterComponent />
@@ -37,6 +40,12 @@ function togglePanel() {
   text-align: center;
 }
 
+.page-wrapper {
+  position: relative;
+  padding-right: 40px; /* Add padding to prevent content from hiding under the collapsed panel's button */
+  transition: padding-right 0.3s ease-in-out;
+}
+
 .side-panel {
   position: fixed;
   top: 0;
@@ -45,7 +54,7 @@ function togglePanel() {
   width: 350px;
   background-color: #f8f9fa;
   box-shadow: -2px 0 5px rgba(0,0,0,0.1);
-  transform: translateX(100%);
+  transform: translateX(100%); /* Hide panel completely off-screen */
   transition: transform 0.3s ease-in-out;
   z-index: 1000;
 }
