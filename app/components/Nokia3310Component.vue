@@ -514,7 +514,7 @@ const handleMouseMove = (event: MouseEvent) => {
 
   // Changer l'apparence du bouton survolé
   if (intersects.length > 0) {
-    const hoveredButton = intersects[0].object as THREE.Mesh
+    const hoveredButton = intersects[0]?.object as THREE.Mesh
     if (hoveredButton.material instanceof THREE.MeshPhongMaterial) {
       if (hoveredButton === resetButton) {
         hoveredButton.material.emissive.setHex(0x00ff00)
@@ -549,7 +549,7 @@ const handleClick = (event: MouseEvent) => {
   const intersects = raycaster.intersectObjects([upButton, downButton, leftButton, rightButton, resetButton])
 
   if (intersects.length > 0) {
-    const clickedButton = intersects[0].object as THREE.Mesh
+    const clickedButton = intersects[0]?.object as THREE.Mesh
     const buttonType = clickedButton.userData?.type
 
     // Effet visuel de clic
