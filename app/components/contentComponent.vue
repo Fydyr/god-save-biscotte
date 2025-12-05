@@ -12,7 +12,7 @@
 
 <style>
     body{
-        background-color: #bff23d;
+        background-color: darkgreen;
         cursor: grab;
     }
     
