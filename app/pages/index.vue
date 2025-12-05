@@ -19,3 +19,9 @@ import SanteWidget from '../components/SanteWidget.vue';
   text-align: center;
 }
 </style>
+    <contentComponent></contentComponent>
+    <footerComponent></footerComponent>
+    <div>
+        <HiddenSnakeComponent />
+    </div>
+</template>
