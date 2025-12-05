@@ -1,3 +1,0 @@
-<template>
-    <footerComponent></footerComponent>
-</template>
