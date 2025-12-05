@@ -25,12 +25,12 @@
 
     .mentionsLegales a{
         text-decoration: None;
-        color: #666; /* Satan shall rull over this world soon to be damned \/0\/ */ 
+        color: #CCC; /* Satan shall rull over this world soon to be damned \/0\/ */ 
     }
 
     .nirdLink a{
         text-decoration: None;
-        color: #666; /* Satan shall rull over this world soon to be damned \/0\/ */
+        color: #CCC; /* Satan shall rull over this world soon to be damned \/0\/ */
     }
 
     .mentionsLegales, .nirdLink{
