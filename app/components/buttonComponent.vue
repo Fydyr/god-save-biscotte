@@ -24,8 +24,8 @@
     }
     
     .parchment {
-        max-width: 90vw;
-        max-height: 90vh;
+        width: 100vw;
+        height: 100vh;
         object-fit: contain;
         cursor: default;
     }
@@ -51,31 +51,6 @@
 </style>
 
 <script>
-export default {
-    data() {
-        return {
-            isClicked: false
-        }
-    },
-    computed: {
-        currentImage() {
-            return this.isClicked 
-                ? new URL('../assets/img/pressed_button.png', import.meta.url).href
-                : new URL('../assets/img/button.png', import.meta.url).href;
-        }
-    },
-    methods: {
-        toggleButton() {
-            this.isClicked = true;
-            
-            // Retour automatique après 150ms
-            setTimeout(() => {
-                this.isClicked = false;
-            }, 200);
-        }
-    }
-}
-
 export default {
     data() {
         return {
