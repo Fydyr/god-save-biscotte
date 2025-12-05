@@ -29,6 +29,7 @@ function togglePanel() {
     </div>
     <FooterComponent />
   </div>
+  <footerComponent></footerComponent>
 </template>
 <style>
 /* Style global de la page */
