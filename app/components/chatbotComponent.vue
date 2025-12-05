@@ -21,30 +21,20 @@ async function sendMessage() {
     })
     conversation.value.push({ role: 'Snappy', text: reply })
   } catch (err) {
-    console.error('Chat API error:', err)  // For debugging
-    conversation.value.push({ role: 'System', text: 'Snappy has uninstalled system32.dll (Error).' })
+    console.error('Chat API error:', err)
+    conversation.value.push({ role: 'System', text: 'Snappy a désinstallé system32.dll (Erreur).' })
   } finally {
     pending.value = false
   }
 }
 
-// Optional: Auto-scroll to bottom on new messages
-const chatContainer = ref(null)
-watch(conversation, () => {
-  nextTick(() => {
-    if (chatContainer.value) {
-      chatContainer.value.scrollTop = chatContainer.value.scrollHeight
-    }
-  })
-})
-
 const lastSnappyMessage = computed(() => {
   if (pending.value) {
-    return 'Thinking of an excuse...';
+    return 'Je cherche une excuse...';
   }
   // Find the last message that is not from the 'User'
   const lastBotMessage = [...conversation.value].reverse().find(msg => msg.role !== 'User');
-  return lastBotMessage ? lastBotMessage.text : 'Ask me something!';
+  return lastBotMessage ? lastBotMessage.text : 'Pose-moi une question !';
 })
 </script>
 
@@ -56,7 +46,7 @@ const lastSnappyMessage = computed(() => {
       </div>
       <img 
         src="/assets/img/Snappy_retro.png" 
-        alt="Snappy the chatbot" 
+        alt="Snappy le chatbot" 
         class="snappy-image"
       />
     </div>
@@ -64,11 +54,11 @@ const lastSnappyMessage = computed(() => {
     <form @submit.prevent="sendMessage" class="message-form">
       <input 
         v-model="input" 
-        placeholder="Ask a question..." 
+        placeholder="Pose une question..." 
         :disabled="pending"
       />
       <button type="submit" :disabled="pending">
-        Send
+        Envoyer
       </button>
     </form>
   </div>
