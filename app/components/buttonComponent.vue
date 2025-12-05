@@ -1,9 +1,9 @@
 <template>
-    <img :src="currentImage" @click="toggleButton" id="button"/>
+    <img :src="currentImage" @click="toggleButton" id="button" />
 
     <transition name="fade">
         <div v-if="showParchment" class="parchment-overlay" @click="closeParchment">
-            <img src="../assets/img/scroll.png" class="parchment" alt="Parchemin"/>
+            <img src="../assets/img/scroll.png" class="parchment" alt="Parchemin" />
         </div>
     </transition>
 </template>
@@ -30,24 +30,26 @@
         cursor: default;
     }
 
-    .fade-enter-active, .fade-leave-active {
-        transition: opacity 0.3s;
-    }
-    
-    .fade-enter-from, .fade-leave-to {
-        opacity: 0;
-    }
+.fade-enter-active,
+.fade-leave-active {
+    transition: opacity 0.3s;
+}
 
-    img {
-        cursor: pointer;
-        transition: transform 0.1s;
-        height: 200px;
-        width: 200px;
-    }
-        
-    img:active {
-        transform: scale(0.95);
-    }
+.fade-enter-from,
+.fade-leave-to {
+    opacity: 0;
+}
+
+img {
+    cursor: pointer;
+    transition: transform 0.1s;
+    height: 200px;
+    width: 200px;
+}
+
+img:active {
+    transform: scale(0.95);
+}
 </style>
 
 <script>
